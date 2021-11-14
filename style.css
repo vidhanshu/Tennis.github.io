@@ -57,6 +57,7 @@ h1 {
     align-items: center;
     padding: 5px 10px;
     width: 70%;
+    display:none;
 }
 
 .controls button {
@@ -158,6 +159,7 @@ h1 {
         padding: 10px;
         width: 70%;
         margin: auto;
+        display:flex;
     }
     .instructions {
         min-height: 105vh;
