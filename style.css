@@ -57,6 +57,7 @@ h1 {
     align-items: center;
     padding: 5px 10px;
     width: 70%;
+    display:none;
 }
 
 .controls button {
@@ -166,6 +167,7 @@ h1 {
         padding: 10px;
         width: 70%;
         margin: auto;
+        display:flex;
     }
     .instructions {
         min-height: 110vh;
@@ -222,6 +224,7 @@ h1 {
 .top-nav #volume {
     margin-right: 20px;
 }
+<<<<<<< HEAD
 
 
 /* for loadeer */
@@ -347,3 +350,5 @@ h1 {
 .dot3 {
     animation: dot3 infinite linear 1s;
 }
+=======
+>>>>>>> b23475dae27ce3a29fe8fcbe9a71b657c4c30c86
