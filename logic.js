@@ -68,14 +68,14 @@ volume.addEventListener('click', function() {
 
 
 //loading
-/* loader(9000, 10000); */
+loader(9000, 10000);
 
-/* function loader(start, end) {
+function loader(start, end) {
     loading.style.display = "block";
     setTimeout(function() {
         loading.style.display = "none";
     }, random(start, end));
-} */
+}
 
 
 
