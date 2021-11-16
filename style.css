@@ -82,7 +82,7 @@ h1 {
 
 .instructions {
     min-width: 100vw;
-    min-height: 100vh;
+    min-height: 109vh;
     position: absolute;
     display: flex;
     justify-content: center;
@@ -139,8 +139,16 @@ h1 {
     line-height: 60px;
 }
 
+.footer {
+    margin-top: 20px;
+}
+
 .footer h1 {
     font-size: 20px;
+}
+
+.footer i {
+    color: red;
 }
 
 @media screen and (max-width:700px) {
@@ -160,7 +168,7 @@ h1 {
         margin: auto;
     }
     .instructions {
-        min-height: 105vh;
+        min-height: 110vh;
     }
     .instruction-card {
         color: white;
@@ -213,4 +221,129 @@ h1 {
 
 .top-nav #volume {
     margin-right: 20px;
+}
+
+
+/* for loadeer */
+
+.main {
+    min-width: 100vw;
+    height: 110vh;
+    background-color: black;
+    position: absolute;
+    z-index: 200;
+    display: none;
+}
+
+.container {
+    transform: translateY(30vh);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    animation: color 4s linear infinite;
+}
+
+.loader {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-image: linear-gradient(to top, rgb(8, 8, 54), aqua);
+    position: relative;
+    animation: rotate 2s linear infinite;
+    box-shadow: 5px 5px 5px aqua;
+}
+
+@keyframes rotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes color {
+    to {
+        filter: hue-rotate(360deg);
+    }
+}
+
+.loader::before {
+    content: "";
+    width: 130px;
+    height: 140px;
+    border-radius: 50%;
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    right: -1px;
+    top: 5px;
+}
+
+.loader::after {
+    content: "";
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: aqua;
+    position: absolute;
+    right: 27px;
+    top: -10px;
+    box-shadow: 15px 15px 50px aqua, -15px -15px 50px aqua, 15px -15px 50px aqua;
+}
+
+.load-text {
+    color: aqua;
+    margin: 30px auto;
+}
+
+@keyframes dot1 {
+    0% {
+        opacity: 0;
+    }
+    30% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes dot2 {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes dot3 {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    80% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.dot1 {
+    animation: dot1 infinite linear 1s;
+}
+
+.dot2 {
+    animation: dot2 infinite linear 1s;
+}
+
+.dot3 {
+    animation: dot3 infinite linear 1s;
 }
