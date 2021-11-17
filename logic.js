@@ -19,12 +19,27 @@ var ballY = random(canvasH / 2, canvasH - 100);
 var ballSpeedY = 3;
 var paddle1Y = 5;
 var PADDLE_HEIGHT = 100;
+
+
+
+
+
+
+
+//Audio section
 var up = document.getElementById("up");
 var down = document.getElementById("down");
 var bounce = new Audio("bouncy_ball.mp3");
 var tap = new Audio("tap.mp3");
 var swap = new Audio("swap.wav");
 var gameover = new Audio("gameOver.wav");
+const background = new Audio("BG.mp3");
+const victory = new Audio("victory.mp3");
+var bonus = new Audio("bonus.wav");
+background.loop = "true";
+
+
+
 var score = 0;
 var scoreSection = document.querySelector(".score");
 const start = document.querySelector(".start");
@@ -32,8 +47,7 @@ var value;
 var controls = document.querySelector(".controls");
 var instruction = document.querySelector(".instructions");
 var instruction_mobile = document.querySelector(".mobile")
-const background = new Audio("BG.mp3");
-//background volume set
+    //background volume set
 background.volume = 0.36;
 var instruction_pc = document.querySelector(".pc")
 var okay = document.querySelector("#Okay");
@@ -51,8 +65,9 @@ var body = document.querySelector(".body");
 const dark = document.querySelector("#dark");
 const volume = document.querySelector("#volume");
 const loading = document.querySelector(".main");
-const victory = new Audio("victory.mp3");
-var bonus = new Audio("bonus.wav");
+
+
+
 //toggle bg music
 
 volume.addEventListener('click', function() {
