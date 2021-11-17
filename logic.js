@@ -68,7 +68,7 @@ volume.addEventListener('click', function() {
 
 
 //loading
-loader(9000, 10000);
+loader(3000, 5000);
 
 function loader(start, end) {
     loading.style.display = "block";
@@ -77,7 +77,16 @@ function loader(start, end) {
     }, random(start, end));
 }
 
-
+//menu
+var menu_curten = document.querySelector(".menu-curten");
+var menu_button = document.querySelector(".logo");
+menu_button.addEventListener('click', function() {
+    if (menu_curten.style.width == "" || menu_curten.style.width == "0vw") {
+        menu_curten.style.width = "100vw";
+    } else {
+        menu_curten.style.width = "0vw";
+    }
+})
 
 
 
@@ -167,7 +176,13 @@ window.onresize = function() {
         controls.style.display = "flex";
     }
 }
-
+window.onload = function() {
+    if (window.innerWidth >= 700) {
+        controls.style.display = "none";
+    } else {
+        controls.style.display = "flex";
+    }
+}
 start.addEventListener('click', startGame)
 
 
@@ -395,7 +410,7 @@ function drawEverything() {
     templateDraw(0, 0, canvasW, canvasH, "black");
     templateDraw(5, paddle1Y, 10, PADDLE_HEIGHT, "red");
 
-    if (score > -1) {
+    if (score > 8) {
         templateDraw(newWallX, newWallY, 15, newWallW, "red");
         wallBouncing(newWallX, newWallY, newWallW);
     }

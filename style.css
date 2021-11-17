@@ -88,6 +88,7 @@ h1 {
     justify-content: center;
     align-items: center;
     background-color: rgb(14, 14, 105);
+    z-index: 1;
 }
 
 .instructions::after {
@@ -206,12 +207,6 @@ h1 {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 30px;
-}
-
-.top-nav .logo {
-    font-size: 40px;
-    margin-left: 20px;
-    cursor: pointer;
 }
 
 .top-nav i {
@@ -346,4 +341,221 @@ h1 {
 
 .dot3 {
     animation: dot3 infinite linear 1s;
+}
+
+
+/*animated nav bar made by my self*/
+
+.logo {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    overflow-x: hidden;
+    cursor: pointer;
+}
+
+.logo .d1,
+.d2,
+.d3 {
+    width: 3px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: red;
+    position: absolute;
+    transition: all 1s;
+}
+
+.d1 {
+    transform: rotate(-20deg);
+    left: 8px;
+    top: 20px;
+    transition: all 1s;
+}
+
+.d2 {
+    transform: rotate(20deg);
+    left: 14px;
+    top: 20px;
+    transition: all 1s;
+}
+
+.d3 {
+    height: 24px;
+    transform: rotate(90deg);
+    left: 30px;
+    top: 2px;
+    transition: all 1s;
+}
+
+.d4 {
+    width: 3px;
+    height: 26px;
+    border-radius: 20px;
+    background-color: red;
+    position: absolute;
+    top: 13.5px;
+    left: 30px;
+}
+
+.logo:hover .d1 {
+    animation: bar1 linear .7s;
+    animation-fill-mode: both;
+    transition: all 1s;
+}
+
+.logo:hover .d2 {
+    animation: bar2 linear .7s;
+    animation-fill-mode: both;
+    transition: all 1s;
+}
+
+.logo:hover .d3 {
+    transition: all 1s;
+    animation: bar3 linear 1s both;
+}
+
+.logo:hover .d4 {
+    transition: all 1s;
+    animation: bar4 linear .6s both;
+}
+
+@keyframes bar1 {
+    0% {
+        transform: rotate(-20deg);
+        left: 8px;
+        top: 20px;
+    }
+    100% {
+        transform: rotate(90deg);
+        left: 20px;
+        top: 26.3312px;
+        animation-direction: reverse;
+    }
+}
+
+@keyframes bar2 {
+    0% {
+        transform: rotate(20deg);
+        left: 14px;
+        top: 20px;
+    }
+    100% {
+        transform: rotate(-90deg);
+        left: 29.5px;
+        top: 26.0px;
+    }
+}
+
+@keyframes bar3 {
+    0% {
+        height: 24px;
+        transform: rotate(90deg);
+        left: 30px;
+        top: 2px;
+    }
+    40% {
+        height: 6px;
+        transform: rotate(90deg);
+        left: -40px;
+        top: 15px;
+    }
+    60% {
+        top: -15px;
+        left: 25px;
+        height: 6px;
+        border-radius: 50%;
+    }
+    90% {
+        top: 20px;
+        height: 4.5px;
+        border-radius: 50%;
+    }
+    100% {
+        height: 29px;
+        transform: rotate(90deg);
+        left: 25px;
+        top: 0px;
+    }
+}
+
+@keyframes bar4 {
+    0% {
+        width: 3px;
+        height: 26px;
+        border-radius: 20px;
+        background-color: red;
+        position: absolute;
+        top: 13.5px;
+        left: 1.5;
+    }
+    100% {
+        width: 3px;
+        height: 29px;
+        border-radius: 20px;
+        position: absolute;
+        top: 10.9px;
+        transform: rotate(450deg);
+        left: 25px;
+    }
+}
+
+
+/* menu */
+
+.menu-curten a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    transition: all .2s ease-in;
+}
+
+.menu-curten {
+    top: 50px;
+    width: 0vw;
+    height: 100vh;
+    background-image: url("bgimg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 1000;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: .4s;
+    color: white;
+}
+
+.game-mode {
+    cursor: pointer;
+    margin: 5px;
+}
+
+.menu-curten ul {
+    padding: 20px 40px;
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    height: 40%;
+    min-width: 250px;
+    width: 60%;
+    text-transform: capitalize;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5), 20px 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.menu-curten li {
+    list-style: none;
+    font-size: 23px;
+}
+
+.menu-curten a:hover {
+    color: red;
+    padding: 5px;
+    background-color: #fff;
+    border-radius: 10px;
 }
